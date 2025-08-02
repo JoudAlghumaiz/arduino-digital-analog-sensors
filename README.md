@@ -26,7 +26,7 @@ The PIR sensor's VCC pin is connected to Arduino's 5V, GND to GND, and the OUT p
 
 
 
-###  **2. Arduino Analog Sensor - LDR Light Sensor
+###  **2. Analog Sensor - LDR Light Sensor
 
 ### **Description**
 

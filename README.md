@@ -21,7 +21,32 @@ This project uses a PIR sensor to detect motion. When motion is detected, an LED
 
 The PIR sensor's VCC pin is connected to Arduino's 5V, GND to GND, and the OUT pin to Arduino's digital pin 7. The LED's anode (positive) is connected to Arduino's digital pin 13 via a 220Ω resistor, and its cathode (negative) is connected to GND.
 
+### **Arduino Code**
+// C++ code
+//
 
+const int pirSensorPin = 7;     
+const int ledPin = 13;
+
+void setup()
+{
+  pinMode(pirSensorPin, INPUT);  
+  pinMode(ledPin, OUTPUT); 
+ }
+
+void loop()
+{
+    int sensorValue = digitalRead(pirSensorPin);
+ if (sensorValue == HIGH) {
+    digitalWrite(ledPin, HIGH);
+    Serial.println("Motion detected! LED is ON.");
+  } else {
+    digitalWrite(ledPin, LOW);
+    Serial.println("No motion. LED is OFF.");
+  }
+    delay(100);
+
+}
 
 
 
@@ -51,4 +76,32 @@ This project demonstrates the use of an Analog Light Dependent Resistor (LDR) se
 
 <img width="1440" height="729" alt="Analog Sensor - LDR Light Sensor" src="https://github.com/user-attachments/assets/1e9694d5-6a37-4ac7-88ce-6e9c53418ffa" />
 
+### **Arduino Code**
+// C++ code
+//
+
+const int ldrPin = A0;          
+const int ledPin = 13; 
+int lightThreshold = 500;
+
+
+void setup()
+{
+ pinMode(ledPin, OUTPUT);
+}
+
+void loop()
+{
+    int ldrValue = analogRead(ldrPin);
+ Serial.print("LDR Value: ");
+  Serial.println(ldrValue);
+  
+  if (ldrValue < lightThreshold) {
+    digitalWrite(ledPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
+  
+  delay(500);
+}
 

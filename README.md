@@ -22,6 +22,7 @@ This project uses a PIR sensor to detect motion. When motion is detected, an LED
 The PIR sensor's VCC pin is connected to Arduino's 5V, GND to GND, and the OUT pin to Arduino's digital pin 7. The LED's anode (positive) is connected to Arduino's digital pin 13 via a 220Ω resistor, and its cathode (negative) is connected to GND.
 
 ### **Arduino Code**
+```cpp 
 // C++ code
 //
 
@@ -47,9 +48,7 @@ void loop()
     delay(100);
 
 }
-
-
-
+```
 
 ###  **2. Analog Sensor - LDR Light Sensor
 
@@ -77,6 +76,7 @@ This project demonstrates the use of an Analog Light Dependent Resistor (LDR) se
 <img width="1440" height="729" alt="Analog Sensor - LDR Light Sensor" src="https://github.com/user-attachments/assets/1e9694d5-6a37-4ac7-88ce-6e9c53418ffa" />
 
 ### **Arduino Code**
+```cpp 
 // C++ code
 //
 
@@ -104,4 +104,4 @@ void loop()
   
   delay(500);
 }
-
+```
